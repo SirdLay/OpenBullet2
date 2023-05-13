@@ -1,7 +1,26 @@
 {
-  "name": "Openbullet Heroku",
-  "description": "Heroku Openbullet deploy",
+  "name": "OpenBullet2",
+  "description": "OpenBullet2: An automated testing tool for security purposes",
+  "image": "openbullet/openbullet2:latest",
   "repository": "https://github.com/SirdLay/OpenBullet2",
-  "logo": "http://pngimg.com/uploads/telegram/telegram_PNG36.png",
-  "keywords": ["OB2", "docker", "Heroku"]
+  "logo": "https://avatars.githubusercontent.com/u/48930622?v=4",
+  "addons": [],
+  "env": {
+    "FLASK_APP": "app.py",
+    "FLASK_DEBUG": ""
+  },
+  "scripts": {
+    "postdeploy": "echo 'Open your app at: ' && heroku open"
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "Eco"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/docker"
+    }
+  ]
 }
